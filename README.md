@@ -171,7 +171,7 @@ You can implement this however you want. Do some research on PWM if you need to 
 - `sw/part3.c` - all code written for part 3
 
 ## Task 4 (Graduate Sections Only):
-Inspecting the code that was used for the LED APB component, you must now create your own APB component for the 16 switches, create your own IP for this, and showcase Task 3 working with your custom component.
+Inspecting the code that was used for the LED APB component, you must now create your own APB component for the 16 switches, create your own IP for this, and showcase Task 3 working with your custom component (i.e. replace the AXI GPIO component).
 Refer to: https://www.realdigital.org/doc/78e6f9b1a03ba4ca131ff3ba2e4dff3f
 
 ### Deliverables
