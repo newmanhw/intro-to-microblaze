@@ -21,7 +21,7 @@ You will follow the entire tutorial and take a picture of your PuTTY terminal sh
 Starting Application
 My name is <YOUR NAME>
 ```
-along with the board having the LEDs mapped to the switches.
+along with the board having the LEDs mapped to the switches. Probably easiest to take this photo with your phone.
 
 The starter code that is used in the video is located in `sw/example.c`. Make sure that you are able to get the basic LED application to work.
 
@@ -44,7 +44,7 @@ You can add a #define at the top of your file like:
 Then, you could write to the bottom 3 bits of that address (can send to the whole register but only bottom 3 are used).
 
 ### Deliverables
-`images/part1.{jpg/png}` - picture of your board and PuTTY terminal showing your name and the LEDs
+- `images/part1.{jpg/png}` - picture of your board and PuTTY terminal showing your name and the LEDs
 - `sw/part1.c` - all code written for part 1  
 
 ## Task 2: Using Interrupts 
