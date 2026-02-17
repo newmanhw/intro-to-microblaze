@@ -16,12 +16,12 @@ Make sure to select the `xc7s50csga324-1` as the FPGA part to target.
 Please watch the following video for all setup instructions.
 https://youtu.be/x__NwUMkB80?si=GMS5lMFyEwcl28UG
 
-You will follow the entire tutorial and take a picture of your PuTTY terminal showing the text:
+Follow the entire tutorial and try to get your PuTTY terminal showing the text:
 ```
 Starting Application
 My name is <YOUR NAME>
 ```
-along with the board having the LEDs mapped to the switches. Probably easiest to take this photo with your phone.
+along with the board having the LEDs mapped to the switches.
 
 The starter code that is used in the video is located in `sw/example.c`. Make sure that you are able to get the basic LED application to work.
 
@@ -43,5 +43,8 @@ You can add a #define at the top of your file like:
 
 Then, you could write to the bottom 3 bits of that address (can send to the whole register but only bottom 3 are used).
 
-Inspecting the code that was used for the LED APB component, you must now create your own APB component for the 16 switches, create your own IP for this, and showcase Task 3 working with your custom component (i.e. replace the AXI GPIO component).
+Inspecting the code that was used for the LED APB component, you must now create your own APB component for the 16 switches, create your own IP for this, and use it for peripherals. (i.e. replace the AXI GPIO component). This is useful to reduce contention on the AXI bus for more 'important' peripherals.
+
 Refer to: https://www.realdigital.org/doc/78e6f9b1a03ba4ca131ff3ba2e4dff3f
+
+This tutorial should give you some idea of how to build a basic SoC system (without an OS). This can obviously be extended much further by adding more peripherals and finding more complex microprocessor applications.
