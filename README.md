@@ -1,4 +1,4 @@
-# Project 2: Baby's First SoC
+# Baby's First SoC
 
 ## Overview
 In this lab, you will learn how to put a processor onto your FPGA. You will then use this microprocessor to control some hardware that is on the FPGA, as well as learn how to handle some I/O components fully in software. This will definitely refresh your mind about microprocessors! Ideally, this will prepare you with some extra skills to use for your final project.
@@ -43,9 +43,8 @@ You can add a #define at the top of your file like:
 
 Then, you could write to the bottom 3 bits of that address (can send to the whole register but only bottom 3 are used).
 
-### Deliverables
-- `images/part1.{jpg/png}` - picture of your board and PuTTY terminal showing your name and the LEDs
-- `sw/part1.c` - all code written for part 1  
+Inspecting the code that was used for the LED APB component, you must now create your own APB component for the 16 switches, create your own IP for this, and showcase Task 3 working with your custom component (i.e. replace the AXI GPIO component).
+Refer to: https://www.realdigital.org/doc/78e6f9b1a03ba4ca131ff3ba2e4dff3f
 
 ## Task 2: Using Interrupts 
 In your hardware design, add an `AXI Interrupt Controller`. Customize the component and set the interrupt type to an Edge Interrupt, and the Interrupt Output Connection to 'Single'. Run connection automation, and then manually connect the controller's output interrupt line to the interrupt port of the Microblaze.
@@ -73,18 +72,9 @@ switch (switches) {
     case 2: leds = 0xAAAA; break; // alternating pattern
     // ... etc
 }
-```
-
-### Deliverables
-- `images/part2.{jpg/png}` - screenshot of terminal showing that ISR was fired. 
-- include a short clip somewhere in your report as a link (edit the video and combine it with your part 3 demo showcasing the functionality)
-- `sw/part2.c` - all code written for part 2                  
-
-
+```           
 
 ## Task 3: Controlling the Board with UART
-Note: if you are a graduate student, please see and complete task 4 before you do this.
-
 You will use the terminal to send the Urbana commands via PuTTY. Based on the command, your application will need to do the following:
 - r	- > Set RGB0 to red
 - g	- > Set RGB0 to green
@@ -165,24 +155,4 @@ end loop
 ```
 
 You can implement this however you want. Do some research on PWM if you need to brush up on it. You will demonstrate all the functionality in your video and report. An example of how to read data from the UART module is in `src/example_uart.c`, and it is up to you to expand it as you see fit. Note that you should probably just copy what you had for the previous part to `src/part3.c` and add/remove the relevant portions.
-
-### Deliverables
-- include a short clip somewhere in your report as a link (edit the video and combine it with your part 2 demo showcasing the functionality)
-- `sw/part3.c` - all code written for part 3
-
-## Task 4 (Graduate Sections Only):
-Inspecting the code that was used for the LED APB component, you must now create your own APB component for the 16 switches, create your own IP for this, and showcase Task 3 working with your custom component (i.e. replace the AXI GPIO component).
-Refer to: https://www.realdigital.org/doc/78e6f9b1a03ba4ca131ff3ba2e4dff3f
-
-### Deliverables
-- `hdl/apb_switch_ctl.{vhd, v, sv}`
-- `hdl/switch_ctl.{vhd, v, sv}`
-
- 
-# Submission
-1. Include all screenshots in the `images` folder and in your report.
-2. Include all source files in the `sw` or `hdl` folders, depending on what is specified above.
-3. Record a video of your designs working (part 2 and 3). Make sure to show your Vivado block diagram in the recording. Stitch the two recordings together from each part so it is a single video.
-4. **(Grad only)** Show that you used an APB Switch module for part 3.
-5. Write a short report using the [template provided in this repository](REPORT_TEMPLATE.docx) outlining what you learned in this assignment. 
 
